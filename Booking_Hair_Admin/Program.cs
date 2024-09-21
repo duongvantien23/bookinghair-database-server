@@ -22,6 +22,14 @@ builder.Services.AddTransient<ICitiesBusiness, CitiesBusiness>();
 builder.Services.AddTransient<ICitiesRepository, CitiesRepository>();
 builder.Services.AddTransient<IDistrictsBusiness, DistrictsBusiness>();
 builder.Services.AddTransient<IDistrictsRepository, DistrictsRepository>();
+builder.Services.AddTransient<IServiceBusiness, ServiceBusiness>();
+builder.Services.AddTransient<IServiceRepository, ServiceRepository>();
+builder.Services.AddTransient<ISalonBusiness, SalonBusiness>();
+builder.Services.AddTransient<ISalonRepository, SalonRepository>();
+builder.Services.AddTransient<IHairStylistBusiness, HairStylistBusiness>();
+builder.Services.AddTransient<IHairStylistRepository,HairStylistRepository>();
+builder.Services.AddTransient<IWorkingHourBusiness, WorkingHourBusiness>();
+builder.Services.AddTransient<IWorkingHourRepository, WorkingHourRepository>();
 
 builder.Services.AddCors(option =>
 {
