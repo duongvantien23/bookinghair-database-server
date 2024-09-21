@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataModel
 {
@@ -12,8 +8,15 @@ namespace DataModel
         public int ServiceId { get; set; }
         public string StepDescription { get; set; }
         public string ImageDetails { get; set; }
-        public int StepOrder { get; set; }             
-        public DateTime CreatedAt { get; set; }        
-        public DateTime UpdatedAt { get; set; }          
+        public int StepOrder { get; set; } 
+        public DateTime CreatedAt { get; set; } 
+        public DateTime UpdatedAt { get; set; } 
+
+        // Constructor
+        public ServiceDetailModel()
+        {
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
+        }
     }
 }

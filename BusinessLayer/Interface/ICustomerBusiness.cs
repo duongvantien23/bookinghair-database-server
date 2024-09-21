@@ -1,12 +1,14 @@
-﻿using System;
+﻿using DataModel;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Interface
 {
-    internal class ICustomerBusiness
+    public partial interface ICustomerBusiness
     {
+        bool CreateCustomer(CustomerModel customer);
+        bool UpdateCustomer(CustomerModel customer);
+        bool DeleteCustomer(int customerId);
+        List<CustomerModel> GetAllCustomers();
+        CustomerModel GetCustomerById(int customerId);
     }
 }

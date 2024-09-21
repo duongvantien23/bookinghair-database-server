@@ -1,12 +1,14 @@
-﻿using System;
+﻿using DataModel;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAcessLayer.InterFace
 {
-    internal class ICustomerRepository
+    public partial interface ICustomerRepository
     {
+        bool Create(CustomerModel customer);
+        bool Update(CustomerModel customer);
+        bool Delete(int customerId);
+        List<CustomerModel> GetAll();
+        CustomerModel GetById(int customerId);
     }
 }

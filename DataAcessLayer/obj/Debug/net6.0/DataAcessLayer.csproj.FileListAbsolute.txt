@@ -1,0 +1,17 @@
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\bin\Debug\net6.0\DataAcessLayer.deps.json
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\bin\Debug\net6.0\DataAcessLayer.runtimeconfig.json
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\bin\Debug\net6.0\DataAcessLayer.dll
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\bin\Debug\net6.0\DataAcessLayer.pdb
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\bin\Debug\net6.0\DataModel.dll
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\bin\Debug\net6.0\DataModel.pdb
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.csproj.AssemblyReference.cache
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.AssemblyInfoInputs.cache
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.AssemblyInfo.cs
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.csproj.CoreCompileInputs.cache
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.csproj.CopyComplete
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.dll
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\refint\DataAcessLayer.dll
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.pdb
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.genruntimeconfig.cache
+D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\ref\DataAcessLayer.dll

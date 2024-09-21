@@ -14,7 +14,7 @@ namespace DataModel
         public string NameSalon { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
-        public string MainImage { get; set; }
+        public string ImageSalon { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
     }
