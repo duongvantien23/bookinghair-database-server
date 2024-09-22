@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BusinessLayer.Interface
 {
-    public interface IHairStylistBusiness
+    public partial interface IHairStylistBusiness
     {
         bool CreateHairStylist(HairStylistModel hairstylist);
         bool UpdateHairStylist(HairStylistModel hairstylist);

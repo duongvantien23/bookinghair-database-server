@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataAcessLayer.InterFace
 {
-    public interface ISalonRepository
+    public partial interface ISalonRepository
     {
         bool Create(SalonModel salon);
         bool Update(SalonModel salon);

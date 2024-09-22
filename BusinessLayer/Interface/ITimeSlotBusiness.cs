@@ -1,12 +1,15 @@
-﻿using System;
+﻿using DataModel;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Interface
 {
-    internal class ITimeSlotBusiness
+    public interface ITimeSlotBusiness
     {
+        bool CreateTimeSlot(TimeSlotModel timeSlot);
+        bool UpdateTimeSlot(TimeSlotModel timeSlot);
+        bool DeleteTimeSlot(int timeSlotId);
+        List<TimeSlotModel> GetAllTimeSlots();
+        TimeSlotModel GetTimeSlotById(int timeSlotId);
+        bool UpdateAvailability(int timeSlotId, bool isAvailable);
     }
 }

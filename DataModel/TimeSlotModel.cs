@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataModel
 {
@@ -10,7 +6,15 @@ namespace DataModel
     {
         public int TimeSlotId { get; set; }      
         public string TimeSlot { get; set; }     
-        public DateTime CreatedAt { get; set; }  
-        public DateTime UpdatedAt { get; set; }  
+        public bool IsAvailable { get; set; }    
+        public DateTime CreatedAt { get; set; }   
+        public DateTime UpdatedAt { get; set; }   
+
+        public TimeSlotModel()
+        {
+            IsAvailable = true;                  
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
+        }
     }
 }

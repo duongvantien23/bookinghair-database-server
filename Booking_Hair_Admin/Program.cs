@@ -30,6 +30,8 @@ builder.Services.AddTransient<IHairStylistBusiness, HairStylistBusiness>();
 builder.Services.AddTransient<IHairStylistRepository,HairStylistRepository>();
 builder.Services.AddTransient<IWorkingHourBusiness, WorkingHourBusiness>();
 builder.Services.AddTransient<IWorkingHourRepository, WorkingHourRepository>();
+builder.Services.AddTransient<ITimeSlotBusiness, TimeSlotBusiness>();
+builder.Services.AddTransient<ITimeSlotRepository, TimeSlotRepository>();
 
 builder.Services.AddCors(option =>
 {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BusinessLayer.Interface
 {
-    public interface IWorkingHourBusiness
+    public partial interface IWorkingHourBusiness
     {
         bool CreateWorkingHour(WorkingHourModel workingHour);
         bool UpdateWorkingHour(WorkingHourModel workingHour);

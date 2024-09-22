@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BusinessLayer.Interface
 {
-    public interface IServiceBusiness
+    public partial interface IServiceBusiness
     {
         bool CreateService(ServiceModel service);
         bool UpdateService(ServiceModel service);

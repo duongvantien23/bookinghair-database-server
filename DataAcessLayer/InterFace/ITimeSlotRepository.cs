@@ -1,12 +1,15 @@
-﻿using System;
+﻿using DataModel;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAcessLayer.InterFace
 {
-    internal class ITimeSlotRepository
+    public interface ITimeSlotRepository
     {
+        bool Create(TimeSlotModel timeSlot);
+        bool Update(TimeSlotModel timeSlot);
+        bool Delete(int timeSlotId);
+        List<TimeSlotModel> GetAll();
+        TimeSlotModel GetById(int timeSlotId);
+        bool UpdateAvailability(int timeSlotId, bool isAvailable);
     }
 }

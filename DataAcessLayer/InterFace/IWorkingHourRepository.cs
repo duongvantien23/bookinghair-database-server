@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DataAcessLayer.InterFace
 {
-    public interface IWorkingHourRepository
+    public partial interface IWorkingHourRepository
     {
         bool Create(WorkingHourModel workingHour);
         bool Update(WorkingHourModel workingHour);

@@ -1,12 +1,14 @@
-﻿using System;
+﻿using DataModel;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAcessLayer.InterFace
 {
-    internal class IPromotionRepository
+    public partial interface IPromotionRepository
     {
+        bool Create(PromotionModel promotion);
+        bool Update(PromotionModel promotion);
+        bool Delete(int promotionId);
+        List<PromotionModel> GetAll();
+        PromotionModel GetById(int promotionId);
     }
 }

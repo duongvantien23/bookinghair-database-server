@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DataAcessLayer.InterFace
 {
-    public interface IServiceRepository
+    public partial interface IServiceRepository
     {
         bool Create(ServiceModel service);
         bool Update(ServiceModel service);
