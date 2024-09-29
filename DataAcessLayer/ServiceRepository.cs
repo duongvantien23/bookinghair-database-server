@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer;
 using DataAcessLayer.InterFace;
 using DataModel;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,12 +17,13 @@ namespace DataAcessLayer
             _dbHelper = dbHelper;
         }
 
-        // Thêm mới dịch vụ và chi tiết dịch vụ
+        // Thêm mới dịch vụ
         public bool Create(ServiceModel service)
         {
             string msgError = "";
             try
             {
+                // Gọi stored procedure để tạo dịch vụ
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_create_service",
                     "@NameService", service.NameService,
                     "@Description", service.Description,
@@ -33,38 +35,21 @@ namespace DataAcessLayer
                     throw new Exception(msgError + Convert.ToString(result));
                 }
 
-                // Lấy ID của dịch vụ vừa tạo
-                int serviceId = Convert.ToInt32(result);
-
-                // Thêm chi tiết dịch vụ
-                foreach (var detail in service.ListJsonDetailService)
-                {
-                    var detailResult = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_create_service_detail",
-                        "@ServiceId", serviceId,
-                        "@StepDescription", detail.StepDescription,
-                        "@ImageDetails", detail.ImageDetails,
-                        "@StepOrder", detail.StepOrder);
-
-                    if (!string.IsNullOrEmpty(msgError) || (detailResult != null && !string.IsNullOrEmpty(detailResult.ToString())))
-                    {
-                        throw new Exception(msgError + Convert.ToString(detailResult));
-                    }
-                }
-
                 return true;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error creating service with details: " + ex.Message);
+                throw new Exception("Error creating service: " + ex.Message);
             }
         }
 
-        // Cập nhật dịch vụ và chi tiết dịch vụ
+        // Cập nhật dịch vụ
         public bool Update(ServiceModel service)
         {
             string msgError = "";
             try
             {
+                // Gọi stored procedure để cập nhật dịch vụ
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_update_service",
                     "@ServiceId", service.ServiceId,
                     "@NameService", service.NameService,
@@ -72,50 +57,26 @@ namespace DataAcessLayer
                     "@ImageService", service.ImageService,
                     "@Price", service.Price);
 
+                // Kiểm tra lỗi sau khi cập nhật dịch vụ
                 if (!string.IsNullOrEmpty(msgError) || (result != null && !string.IsNullOrEmpty(result.ToString())))
                 {
                     throw new Exception(msgError + Convert.ToString(result));
-                }
-
-                // Cập nhật chi tiết dịch vụ
-                foreach (var detail in service.ListJsonDetailService)
-                {
-                    var detailResult = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_update_service_detail",
-                        "@ServiceDetailId", detail.ServiceDetailId,
-                        "@ServiceId", service.ServiceId,
-                        "@StepDescription", detail.StepDescription,
-                        "@ImageDetails", detail.ImageDetails,
-                        "@StepOrder", detail.StepOrder);
-
-                    if (!string.IsNullOrEmpty(msgError) || (detailResult != null && !string.IsNullOrEmpty(detailResult.ToString())))
-                    {
-                        throw new Exception(msgError + Convert.ToString(detailResult));
-                    }
                 }
 
                 return true;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error updating service with details: " + ex.Message);
+                throw new Exception("Error updating service: " + ex.Message);
             }
         }
 
-        // Xóa dịch vụ và chi tiết dịch vụ
+        // Xóa dịch vụ
         public bool Delete(int serviceId)
         {
             string msgError = "";
             try
             {
-                // Xóa chi tiết dịch vụ trước
-                var detailResult = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_delete_service_details_by_service_id",
-                    "@ServiceId", serviceId);
-
-                if (!string.IsNullOrEmpty(msgError) || (detailResult != null && !string.IsNullOrEmpty(detailResult.ToString())))
-                {
-                    throw new Exception(msgError + Convert.ToString(detailResult));
-                }
-
                 // Xóa dịch vụ
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_delete_service",
                     "@ServiceId", serviceId);
@@ -154,7 +115,7 @@ namespace DataAcessLayer
             }
         }
 
-        // Lấy thông tin dịch vụ và chi tiết dịch vụ theo ID
+        // Lấy thông tin dịch vụ theo ID
         public ServiceModel GetById(int serviceId)
         {
             string msgError = "";
@@ -168,19 +129,6 @@ namespace DataAcessLayer
                 }
 
                 var service = dt.ConvertTo<ServiceModel>().FirstOrDefault();
-
-                if (service != null)
-                {
-                    // Lấy chi tiết dịch vụ
-                    var detailDt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_service_details_by_service_id", "@ServiceId", serviceId);
-
-                    if (!string.IsNullOrEmpty(msgError))
-                    {
-                        throw new Exception(msgError);
-                    }
-
-                    service.ListJsonDetailService = detailDt.ConvertTo<ServiceDetailModel>().ToList();
-                }
 
                 return service;
             }
