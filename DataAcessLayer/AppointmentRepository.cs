@@ -27,7 +27,7 @@ namespace DataAcessLayer
                     "@SalonId", appointment.SalonId,
                     "@HairstylistId", appointment.HairstylistId,
                     "@ServiceId", appointment.ServiceId,
-                    "@TimeSlotId", appointment.TimeSlotId,  // Thay StartTime và EndTime bằng TimeSlotId
+                    "@TimeSlotId", appointment.TimeSlotId,  
                     "@AppointmentDate", appointment.AppointmentDate,
                     "@Notes", appointment.Notes,
                     "@Status", appointment.Status);
@@ -57,7 +57,7 @@ namespace DataAcessLayer
                     "@SalonId", appointment.SalonId,
                     "@HairstylistId", appointment.HairstylistId,
                     "@ServiceId", appointment.ServiceId,
-                    "@TimeSlotId", appointment.TimeSlotId,  // Thay StartTime và EndTime bằng TimeSlotId
+                    "@TimeSlotId", appointment.TimeSlotId,  
                     "@AppointmentDate", appointment.AppointmentDate,
                     "@Notes", appointment.Notes,
                     "@Status", appointment.Status);

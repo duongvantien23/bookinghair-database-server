@@ -32,6 +32,10 @@ builder.Services.AddTransient<IWorkingHourBusiness, WorkingHourBusiness>();
 builder.Services.AddTransient<IWorkingHourRepository, WorkingHourRepository>();
 builder.Services.AddTransient<ITimeSlotBusiness, TimeSlotBusiness>();
 builder.Services.AddTransient<ITimeSlotRepository, TimeSlotRepository>();
+builder.Services.AddTransient<ICustomerReviewBusiness, CustomerReviewBusiness>();
+builder.Services.AddTransient<ICustomerReviewRepository, CustomerReviewRepository>();
+builder.Services.AddTransient<IPromotionBusiness, PromotionBusiness>();
+builder.Services.AddTransient<IPromotionRepository, PromotionRepository>();
 
 builder.Services.AddCors(option =>
 {

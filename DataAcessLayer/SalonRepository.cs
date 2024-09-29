@@ -30,11 +30,19 @@ namespace DataAcessLayer
                     "@Phone", salon.Phone,
                     "@ImageSalon", salon.ImageSalon);
 
-                if (!string.IsNullOrEmpty(msgError) || (result != null && !string.IsNullOrEmpty(result.ToString())))
+                if (!string.IsNullOrEmpty(msgError))
                 {
-                    throw new Exception(msgError + Convert.ToString(result));
+                    Console.WriteLine("Stored Procedure Error: " + msgError);
+                    throw new Exception(msgError);
                 }
 
+                if (result == null || string.IsNullOrEmpty(result.ToString()))
+                {
+                    Console.WriteLine("Stored Procedure returned no result.");
+                    throw new Exception("Stored Procedure returned no result.");
+                }
+
+                Console.WriteLine("Result: " + result.ToString());
                 return true;
             }
             catch (Exception ex)
@@ -42,7 +50,6 @@ namespace DataAcessLayer
                 throw new Exception("Error creating salon: " + ex.Message);
             }
         }
-
         // Cập nhật salon
         public bool Update(SalonModel salon)
         {
