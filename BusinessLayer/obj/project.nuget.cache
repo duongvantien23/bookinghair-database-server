@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tMuCz6onTP/gUldlUQT6r2ZBmeBkTXIl13jdxjr8uFJgveNyGT1kjYo+POg6g2Ib94QpvPuD6GWGXJh+DG2ykw==",
+  "dgSpecHash": "NOcTz2XX/AM5ejK2iWdLtMi4zBTVn9I0/B9X+w3D3zE4AzdXuxPZZ7CEn45tWEwPA4m7MHZstiYb+/WP04eF4g==",
   "success": true,
-  "projectFilePath": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\BusinessLayer.csproj",
+  "projectFilePath": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\84399\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\84399\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

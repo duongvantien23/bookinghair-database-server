@@ -38,5 +38,9 @@ namespace BusinessLayer
         {
             return _serviceRepository.GetById(serviceId);
         }
+        public List<ServiceDetailModel> GetServiceDetailsByServiceId(int serviceId)
+        {
+            return _serviceRepository.GetServiceDetailsByServiceId(serviceId);
+        }
     }
 }

@@ -44,5 +44,20 @@ namespace BusinessLayer
         {
             return _timeSlotRepository.UpdateAvailability(timeSlotId, isAvailable);
         }
+        public List<TimeSlotModel> GetTimeSlotsBySalonId(int salonId)
+        {
+            return _timeSlotRepository.GetBySalonId(salonId);
+        }
+        // Cập nhật phương thức: Lấy danh sách khung giờ hôm nay dựa trên salonId
+        public List<TimeSlotModel> GetTimeSlotsForToday(int salonId)
+        {
+            return _timeSlotRepository.GetTimeSlotsForToday(salonId);
+        }
+
+        // Cập nhật phương thức: Lấy danh sách khung giờ ngày mai dựa trên salonId
+        public List<TimeSlotModel> GetTimeSlotsForTomorrow(int salonId)
+        {
+            return _timeSlotRepository.GetTimeSlotsForTomorrow(salonId);
+        }
     }
 }

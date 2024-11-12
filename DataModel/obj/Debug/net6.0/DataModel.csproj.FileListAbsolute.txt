@@ -12,3 +12,17 @@ D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\refint\Dat
 D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\DataModel.pdb
 D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\DataModel.genruntimeconfig.cache
 D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\ref\DataModel.dll
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\bin\Debug\net6.0\DataModel.deps.json
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\bin\Debug\net6.0\DataModel.runtimeconfig.json
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\bin\Debug\net6.0\DataModel.dll
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\bin\Debug\net6.0\DataModel.pdb
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\DataModel.csproj.AssemblyReference.cache
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\DataModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\DataModel.AssemblyInfoInputs.cache
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\DataModel.AssemblyInfo.cs
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\DataModel.csproj.CoreCompileInputs.cache
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\DataModel.dll
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\refint\DataModel.dll
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\DataModel.pdb
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\DataModel.genruntimeconfig.cache
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataModel\obj\Debug\net6.0\ref\DataModel.dll

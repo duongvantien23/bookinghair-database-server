@@ -10,5 +10,6 @@ namespace DataAcessLayer.InterFace
         bool Delete(int salonId);
         List<SalonModel> GetAll();
         SalonModel GetById(int salonId);
+        List<SalonModel> GetByDistrictId(int districtId);
     }
 }

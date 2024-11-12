@@ -10,5 +10,7 @@ namespace BusinessLayer.Interface
         bool DeleteService(int serviceId);
         List<ServiceModel> GetAllServices();
         ServiceModel GetServiceById(int serviceId);
+        List<ServiceDetailModel> GetServiceDetailsByServiceId(int serviceId);
+
     }
 }

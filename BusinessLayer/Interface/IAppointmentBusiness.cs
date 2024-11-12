@@ -1,9 +1,10 @@
 ﻿using DataModel;
 using System.Collections.Generic;
+using static DataModel.AppointmentModel;
 
 namespace BusinessLayer.Interface
 {
-    public interface IAppointmentBusiness
+    public partial interface IAppointmentBusiness
     {
         bool CreateAppointment(AppointmentModel appointment);     
         bool UpdateAppointment(AppointmentModel appointment);    
@@ -11,7 +12,7 @@ namespace BusinessLayer.Interface
         List<AppointmentModel> GetAllAppointments();             
         AppointmentModel GetAppointmentById(int appointmentId);   
         List<AppointmentModel> GetAppointmentsByCustomer(int customerId);  
-        List<AppointmentModel> GetAppointmentsBySalon(int salonId);        
-        bool UpdateAppointmentStatus(int appointmentId, string status);    
+        List<AppointmentModel> GetAppointmentsBySalon(int salonId);
+        bool CreateAppointmentForUser(AppointmentUserModel appointmentUser);
     }
 }

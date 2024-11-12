@@ -11,5 +11,8 @@ namespace BusinessLayer.Interface
         List<TimeSlotModel> GetAllTimeSlots();
         TimeSlotModel GetTimeSlotById(int timeSlotId);
         bool UpdateAvailability(int timeSlotId, bool isAvailable);
+        List<TimeSlotModel> GetTimeSlotsBySalonId(int salonId);
+        List<TimeSlotModel> GetTimeSlotsForToday(int salonId);
+        List<TimeSlotModel> GetTimeSlotsForTomorrow(int salonId);
     }
 }

@@ -30,16 +30,24 @@ namespace DataAcessLayer
                     "@ImageDetails", serviceDetail.ImageDetails,
                     "@StepOrder", serviceDetail.StepOrder);
 
-                if (!string.IsNullOrEmpty(msgError) || (result != null && !string.IsNullOrEmpty(result.ToString())))
+                if (!string.IsNullOrEmpty(msgError))
                 {
-                    throw new Exception(msgError + Convert.ToString(result));
+                    Console.WriteLine("Stored Procedure Error: " + msgError); // Thông báo lỗi từ stored procedure
+                    throw new Exception(msgError); // Ném ngoại lệ nếu có lỗi
                 }
 
+                if (result == null || string.IsNullOrEmpty(result.ToString()))
+                {
+                    Console.WriteLine("Stored Procedure returned no result."); // Thông báo nếu stored procedure không trả về kết quả
+                    throw new Exception("Stored Procedure returned no result."); // Ném ngoại lệ nếu không có kết quả
+                }
+
+                Console.WriteLine("Result: " + result.ToString()); // In ra kết quả từ stored procedure
                 return true;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error creating service detail: " + ex.Message);
+                throw new Exception("Error creating service detail: " + ex.Message); // Ném ngoại lệ với thông báo lỗi chi tiết
             }
         }
 

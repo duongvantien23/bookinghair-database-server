@@ -27,22 +27,34 @@ namespace DataAcessLayer
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_create_service",
                     "@NameService", service.NameService,
                     "@Description", service.Description,
-                    "@ImageService", service.ImageService,
-                    "@Price", service.Price);
+                    "@ImageServices", service.ImageServices,
+                    "@Price", service.Price,
+                    "@CategoryId", service.CategoryId,
+                    "@Duration", service.Duration);
 
-                if (!string.IsNullOrEmpty(msgError) || (result != null && !string.IsNullOrEmpty(result.ToString())))
+                // Kiểm tra lỗi từ stored procedure
+                if (!string.IsNullOrEmpty(msgError))
                 {
-                    throw new Exception(msgError + Convert.ToString(result));
+                    Console.WriteLine("Stored Procedure Error: " + msgError);
+                    throw new Exception(msgError);
                 }
 
+                // Kiểm tra kết quả trả về từ stored procedure
+                if (result == null || string.IsNullOrEmpty(result.ToString()))
+                {
+                    Console.WriteLine("Stored Procedure returned no result.");
+                    throw new Exception("Stored Procedure returned no result.");
+                }
+
+                Console.WriteLine("Result: " + result.ToString());
                 return true;
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Error creating service: " + ex.Message);
                 throw new Exception("Error creating service: " + ex.Message);
             }
         }
-
         // Cập nhật dịch vụ
         public bool Update(ServiceModel service)
         {
@@ -54,8 +66,10 @@ namespace DataAcessLayer
                     "@ServiceId", service.ServiceId,
                     "@NameService", service.NameService,
                     "@Description", service.Description,
-                    "@ImageService", service.ImageService,
-                    "@Price", service.Price);
+                    "@ImageService", service.ImageServices,
+                    "@Price", service.Price,
+                    "@Duration", service.Duration,
+                    "@CategoryId", service.CategoryId); 
 
                 // Kiểm tra lỗi sau khi cập nhật dịch vụ
                 if (!string.IsNullOrEmpty(msgError) || (result != null && !string.IsNullOrEmpty(result.ToString())))
@@ -135,6 +149,27 @@ namespace DataAcessLayer
             catch (Exception ex)
             {
                 throw new Exception("Error getting service by ID: " + ex.Message);
+            }
+        }
+        // Lấy danh sách chi tiết dịch vụ theo ID dịch vụ
+        public List<ServiceDetailModel> GetServiceDetailsByServiceId(int serviceId)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_service_details_by_service_id", "@ServiceId", serviceId);
+
+                // Kiểm tra lỗi từ stored procedure
+                if (!string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(msgError);
+                }
+
+                return dt.ConvertTo<ServiceDetailModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error getting service details by ServiceId: " + ex.Message);
             }
         }
     }

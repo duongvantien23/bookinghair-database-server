@@ -38,5 +38,9 @@ namespace BusinessLayer
         {
             return _salonRepository.GetById(salonId);
         }
+        public List<SalonModel> GetSalonsByDistrictId(int districtId)
+        {
+            return _salonRepository.GetByDistrictId(districtId);
+        }
     }
 }

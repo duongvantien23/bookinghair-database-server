@@ -2,6 +2,7 @@
 using DataAcessLayer.InterFace;
 using DataModel;
 using System.Collections.Generic;
+using static DataModel.AppointmentModel;
 
 namespace BusinessLayer
 {
@@ -48,10 +49,9 @@ namespace BusinessLayer
         {
             return _appointmentRepository.GetBySalon(salonId);
         }
-
-        public bool UpdateAppointmentStatus(int appointmentId, string status)
+        public bool CreateAppointmentForUser(AppointmentUserModel appointmentUser)
         {
-            return _appointmentRepository.UpdateStatus(appointmentId, status);
+            return _appointmentRepository.CreateAppointmentForUser(appointmentUser);
         }
     }
 }

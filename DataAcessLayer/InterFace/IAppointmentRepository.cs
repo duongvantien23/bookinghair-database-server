@@ -1,9 +1,10 @@
 ﻿using DataModel;
 using System.Collections.Generic;
+using static DataModel.AppointmentModel;
 
 namespace DataAcessLayer.InterFace
 {
-    public interface IAppointmentRepository
+    public partial interface IAppointmentRepository
     {
         bool Create(AppointmentModel appointment);         
         bool Update(AppointmentModel appointment);         
@@ -11,7 +12,7 @@ namespace DataAcessLayer.InterFace
         List<AppointmentModel> GetAll();                  
         AppointmentModel GetById(int appointmentId);     
         List<AppointmentModel> GetByCustomer(int customerId);  
-        List<AppointmentModel> GetBySalon(int salonId);      
-        bool UpdateStatus(int appointmentId, string status);   
+        List<AppointmentModel> GetBySalon(int salonId);
+        bool CreateAppointmentForUser(AppointmentUserModel appointmentUser);
     }
 }

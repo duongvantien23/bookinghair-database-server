@@ -26,6 +26,8 @@ builder.Services.AddTransient<IServiceBusiness, ServiceBusiness>();
 builder.Services.AddTransient<IServiceRepository, ServiceRepository>();
 builder.Services.AddTransient<IServiceDetailBusiness, ServiceDetailBusiness>();
 builder.Services.AddTransient<IServiceDetailRepository, ServiceDetailRepository>();
+builder.Services.AddTransient<IServiceCategorieBusiness, ServiceCategorieBusiness>();
+builder.Services.AddTransient<IServiceCategorieRepository, ServiceCategoryRepository>();
 builder.Services.AddTransient<ISalonBusiness, SalonBusiness>();
 builder.Services.AddTransient<ISalonRepository, SalonRepository>();
 builder.Services.AddTransient<IHairStylistBusiness, HairStylistBusiness>();
@@ -38,6 +40,10 @@ builder.Services.AddTransient<ICustomerReviewBusiness, CustomerReviewBusiness>()
 builder.Services.AddTransient<ICustomerReviewRepository, CustomerReviewRepository>();
 builder.Services.AddTransient<IPromotionBusiness, PromotionBusiness>();
 builder.Services.AddTransient<IPromotionRepository, PromotionRepository>();
+builder.Services.AddTransient<IPartnerBusiness, PartnerBusiness>();
+builder.Services.AddTransient<IPartnerRepository, PartnerRepository>();
+builder.Services.AddTransient<IAppointmentStatusBusiness, AppointmentStatusBusiness>();
+builder.Services.AddTransient<IAppointmentStatusRepository, AppointmentStatusRepository>();
 
 builder.Services.AddCors(option =>
 {

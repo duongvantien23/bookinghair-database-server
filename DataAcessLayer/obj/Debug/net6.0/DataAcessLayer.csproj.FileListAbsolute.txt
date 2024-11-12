@@ -15,3 +15,20 @@ D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\refin
 D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.pdb
 D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.genruntimeconfig.cache
 D:\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\ref\DataAcessLayer.dll
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\bin\Debug\net6.0\DataAcessLayer.deps.json
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\bin\Debug\net6.0\DataAcessLayer.runtimeconfig.json
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\bin\Debug\net6.0\DataAcessLayer.dll
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\bin\Debug\net6.0\DataAcessLayer.pdb
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\bin\Debug\net6.0\DataModel.dll
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\bin\Debug\net6.0\DataModel.pdb
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.csproj.AssemblyReference.cache
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.AssemblyInfoInputs.cache
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.AssemblyInfo.cs
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.csproj.CoreCompileInputs.cache
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.csproj.CopyComplete
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.dll
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\refint\DataAcessLayer.dll
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.pdb
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\DataAcessLayer.genruntimeconfig.cache
+D:\Phát triển hướng dịch vụ\BTL_PTHDV_ASP\BAITAPLON_API\BookingHair\DataAcessLayer\obj\Debug\net6.0\ref\DataAcessLayer.dll

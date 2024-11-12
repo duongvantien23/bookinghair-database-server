@@ -71,7 +71,17 @@ namespace Booking_Hair_Admin.Controllers
             }
             return Ok("Service updated successfully.");
         }
-
+        // Route: GET get-service-details-by-service-id/api/services/{id}
+        [HttpGet("get-service-details-by-service-id/{id}")]
+        public ActionResult<List<ServiceDetailModel>> GetServiceDetailsByServiceId(int id)
+        {
+            var serviceDetails = _serviceBusiness.GetServiceDetailsByServiceId(id);
+            if (serviceDetails == null || serviceDetails.Count == 0)
+            {
+                return NotFound($"No service details found for Service ID {id}.");
+            }
+            return Ok(serviceDetails);
+        }
         // Route: DELETE delete/api/services/{id}
         [HttpDelete("delete/{id}")]
         public ActionResult DeleteService(int id)

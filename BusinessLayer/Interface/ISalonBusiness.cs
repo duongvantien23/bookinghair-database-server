@@ -10,5 +10,6 @@ namespace BusinessLayer.Interface
         bool DeleteSalon(int salonId);
         List<SalonModel> GetAllSalons();
         SalonModel GetSalonById(int salonId);
+        List<SalonModel> GetSalonsByDistrictId(int districtId);
     }
 }

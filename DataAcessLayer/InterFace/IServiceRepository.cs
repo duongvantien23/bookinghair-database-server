@@ -10,5 +10,6 @@ namespace DataAcessLayer.InterFace
         bool Delete(int serviceId);
         List<ServiceModel> GetAll();
         ServiceModel GetById(int serviceId);
+        List<ServiceDetailModel> GetServiceDetailsByServiceId(int serviceId);
     }
 }

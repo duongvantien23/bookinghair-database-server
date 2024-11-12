@@ -29,10 +29,19 @@ namespace DataAcessLayer
                     "@CityId", customer.CityId,
                     "@DistrictId", customer.DistrictId);
 
-                if (!string.IsNullOrEmpty(msgError) || (result != null && !string.IsNullOrEmpty(result.ToString())))
+                if (!string.IsNullOrEmpty(msgError))
                 {
-                    throw new Exception(msgError + Convert.ToString(result));
+                    Console.WriteLine("Stored Procedure Error: " + msgError);
+                    throw new Exception(msgError);
                 }
+
+                if (result == null || string.IsNullOrEmpty(result.ToString()))
+                {
+                    Console.WriteLine("Stored Procedure returned no result.");
+                    throw new Exception("Stored Procedure returned no result.");
+                }
+
+                Console.WriteLine("Result: " + result.ToString());
                 return true;
             }
             catch (Exception ex)
@@ -40,7 +49,6 @@ namespace DataAcessLayer
                 throw new Exception("Error creating customer: " + ex.Message);
             }
         }
-
         // Cập nhật thông tin khách hàng
         public bool Update(CustomerModel customer)
         {

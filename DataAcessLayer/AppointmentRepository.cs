@@ -4,6 +4,7 @@ using DataModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using static DataModel.AppointmentModel;
 
 namespace DataAcessLayer
 {
@@ -30,7 +31,7 @@ namespace DataAcessLayer
                     "@TimeSlotId", appointment.TimeSlotId,  
                     "@AppointmentDate", appointment.AppointmentDate,
                     "@Notes", appointment.Notes,
-                    "@Status", appointment.Status);
+                    "@StatuId", appointment.StatusId);
 
                 if (!string.IsNullOrEmpty(msgError) || result == null)
                 {
@@ -60,7 +61,7 @@ namespace DataAcessLayer
                     "@TimeSlotId", appointment.TimeSlotId,  
                     "@AppointmentDate", appointment.AppointmentDate,
                     "@Notes", appointment.Notes,
-                    "@Status", appointment.Status);
+                    "@StatusId", appointment.StatusId);
 
                 if (!string.IsNullOrEmpty(msgError) || result == null)
                 {
@@ -180,27 +181,43 @@ namespace DataAcessLayer
                 throw new Exception("Error getting appointments by salon: " + ex.Message);
             }
         }
-
-        // Cập nhật trạng thái cuộc hẹn
-        public bool UpdateStatus(int appointmentId, string status)
+        public bool CreateAppointmentForUser(AppointmentUserModel appointmentUser)
         {
             string msgError = "";
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_update_appointment_status",
-                    "@AppointmentId", appointmentId,
-                    "@Status", status);
+                string listJsonCustomer = Newtonsoft.Json.JsonConvert.SerializeObject(appointmentUser.ListJsonCustomer);
 
-                if (!string.IsNullOrEmpty(msgError) || result == null)
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_create_appointment_for_user",
+                    "@CustomerId", appointmentUser.CustomerId,
+                    "@SalonId", appointmentUser.SalonId,
+                    "@HairstylistId", appointmentUser.HairstylistId,
+                    "@ServiceId", appointmentUser.ServiceId,
+                    "@TimeSlotId", appointmentUser.TimeSlotId,
+                    "@AppointmentDate", appointmentUser.AppointmentDate,
+                    "@Notes", appointmentUser.Notes,
+                    "@StatusId", appointmentUser.StatusId,
+                    "@ListJsonCustomer", listJsonCustomer);
+
+                if (!string.IsNullOrEmpty(msgError))
                 {
+                    Console.WriteLine("Stored Procedure Error: " + msgError);
                     throw new Exception(msgError);
                 }
 
+                if (result == null || string.IsNullOrEmpty(result.ToString()))
+                {
+                    Console.WriteLine("Stored Procedure returned no result.");
+                    throw new Exception("Stored Procedure returned no result.");
+                }
+
+                Console.WriteLine("Result: " + result.ToString());
                 return true;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error updating appointment status: " + ex.Message);
+                Console.WriteLine("Error creating appointment for user: " + ex.Message);
+                throw new Exception("Error creating appointment for user: " + ex.Message);
             }
         }
     }

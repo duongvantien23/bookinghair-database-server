@@ -3508,11 +3508,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\BusinessLayer.csproj",
+      "projectPath": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\BusinessLayer.csproj",
       "packagesPath": "C:\\Users\\84399\\.nuget\\packages\\",
-      "outputPath": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\obj\\",
+      "outputPath": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\84399\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3529,11 +3529,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\DataAcessLayer\\DataAcessLayer.csproj": {
-              "projectPath": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\DataAcessLayer\\DataAcessLayer.csproj"
+            "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\DataAcessLayer\\DataAcessLayer.csproj": {
+              "projectPath": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\DataAcessLayer\\DataAcessLayer.csproj"
             },
-            "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\DataModel\\DataModel.csproj": {
-              "projectPath": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\DataModel\\DataModel.csproj"
+            "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\DataModel\\DataModel.csproj": {
+              "projectPath": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\DataModel\\DataModel.csproj"
             }
           }
         }

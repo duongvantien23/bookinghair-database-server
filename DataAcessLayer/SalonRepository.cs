@@ -141,5 +141,26 @@ namespace DataAcessLayer
                 throw new Exception("Error getting salon by ID: " + ex.Message);
             }
         }
+        // Lấy toàn bộ salon theo DistrictId
+        public List<SalonModel> GetByDistrictId(int districtId)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_salons_by_district",
+                    "@DistrictId", districtId);
+
+                if (!string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(msgError);
+                }
+
+                return dt.ConvertTo<SalonModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error getting salons by DistrictId: " + ex.Message);
+            }
+        }
     }
 }

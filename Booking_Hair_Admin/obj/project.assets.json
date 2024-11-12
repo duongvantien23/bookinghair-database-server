@@ -3268,11 +3268,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\Booking_Hair_Admin\\Booking_Hair_Admin.csproj",
+      "projectUniqueName": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\Booking_Hair_Admin\\Booking_Hair_Admin.csproj",
       "projectName": "Booking_Hair_Admin",
-      "projectPath": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\Booking_Hair_Admin\\Booking_Hair_Admin.csproj",
+      "projectPath": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\Booking_Hair_Admin\\Booking_Hair_Admin.csproj",
       "packagesPath": "C:\\Users\\84399\\.nuget\\packages\\",
-      "outputPath": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\Booking_Hair_Admin\\obj\\",
+      "outputPath": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\Booking_Hair_Admin\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\84399\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3289,8 +3289,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\BusinessLayer.csproj": {
-              "projectPath": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\BusinessLayer.csproj"
+            "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\BusinessLayer.csproj"
             }
           }
         }

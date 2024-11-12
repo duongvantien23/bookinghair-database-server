@@ -30,11 +30,19 @@ namespace DataAcessLayer
                     "@StartDate", promotion.StartDate,
                     "@EndDate", promotion.EndDate);
 
-                if (!string.IsNullOrEmpty(msgError) || result == null)
+                if (!string.IsNullOrEmpty(msgError))
                 {
+                    Console.WriteLine("Stored Procedure Error: " + msgError);
                     throw new Exception(msgError);
                 }
 
+                if (result == null || string.IsNullOrEmpty(result.ToString()))
+                {
+                    Console.WriteLine("Stored Procedure returned no result.");
+                    throw new Exception("Stored Procedure returned no result.");
+                }
+
+                Console.WriteLine("Result: " + result.ToString());
                 return true;
             }
             catch (Exception ex)
@@ -42,7 +50,6 @@ namespace DataAcessLayer
                 throw new Exception("Error creating promotion: " + ex.Message);
             }
         }
-
         // Cập nhật khuyến mãi
         public bool Update(PromotionModel promotion)
         {

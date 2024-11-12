@@ -98,18 +98,6 @@ namespace Booking_Hair_Admin.Controllers
             return Ok("Appointment updated successfully.");
         }
 
-        // Route: PUT update-status/api/appointments/{id}
-        [HttpPut("update-status/{id}")]
-        public ActionResult UpdateAppointmentStatus(int id, [FromBody] string status)
-        {
-            var result = _appointmentBusiness.UpdateAppointmentStatus(id, status);
-            if (!result)
-            {
-                return StatusCode(500, "Error updating appointment status.");
-            }
-            return Ok("Appointment status updated successfully.");
-        }
-
         // Route: DELETE delete/api/appointments/{id}
         [HttpDelete("delete/{id}")]
         public ActionResult DeleteAppointment(int id)

@@ -24,7 +24,9 @@ namespace DataAcessLayer
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_create_timeslot",
                     "@TimeSlot", timeSlot.TimeSlot,
-                    "@IsAvailable", timeSlot.IsAvailable);
+                    "@IsAvailable", timeSlot.IsAvailable,
+                    "@DateAvailable", timeSlot.DateAvailable,
+                    "@SalonId", timeSlot.SalonId);
 
                 if (!string.IsNullOrEmpty(msgError) || result == null)
                 {
@@ -48,7 +50,9 @@ namespace DataAcessLayer
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_update_timeslot",
                     "@TimeSlotId", timeSlot.TimeSlotId,
                     "@TimeSlot", timeSlot.TimeSlot,
-                    "@IsAvailable", timeSlot.IsAvailable);
+                    "@IsAvailable", timeSlot.IsAvailable,
+                    "@DateAvailable", timeSlot.DateAvailable,
+                    "@SalonId", timeSlot.SalonId);
 
                 if (!string.IsNullOrEmpty(msgError) || result == null)
                 {
@@ -147,6 +151,76 @@ namespace DataAcessLayer
             catch (Exception ex)
             {
                 throw new Exception("Error updating time slot availability: " + ex.Message);
+            }
+        }
+        // Lấy danh sách các khung giờ theo SalonId
+        public List<TimeSlotModel> GetBySalonId(int salonId)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_timeslots_by_salonid", "@SalonId", salonId);
+
+                if (!string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(msgError);
+                }
+
+                return dt.ConvertTo<TimeSlotModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error getting time slots by salon ID: " + ex.Message);
+            }
+        }
+        public List<TimeSlotModel> GetTimeSlotsForToday(int salonId)
+        {
+            string msgError = "";
+            try
+            {
+                // Lấy ngày hôm nay
+                var today = DateTime.Today.ToString("yyyy-MM-dd");
+
+                // Truy vấn các khung giờ có DateAvailable là ngày hôm nay và thuộc salonId đã chọn
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_timeslots_by_salon_and_date",
+                    "@SalonId", salonId,
+                    "@DateAvailable", today);
+
+                if (!string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(msgError);
+                }
+
+                return dt.ConvertTo<TimeSlotModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error getting time slots for today: " + ex.Message);
+            }
+        }
+        public List<TimeSlotModel> GetTimeSlotsForTomorrow(int salonId)
+        {
+            string msgError = "";
+            try
+            {
+                // Lấy ngày mai
+                var tomorrow = DateTime.Today.AddDays(1).ToString("yyyy-MM-dd");
+
+                // Truy vấn các khung giờ có DateAvailable là ngày mai và thuộc salonId đã chọn
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_timeslots_by_salon_and_tomorrow",
+                    "@SalonId", salonId,
+                    "@DateAvailable", tomorrow);
+
+                if (!string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(msgError);
+                }
+
+                return dt.ConvertTo<TimeSlotModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error getting time slots for tomorrow: " + ex.Message);
             }
         }
     }

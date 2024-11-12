@@ -95,5 +95,39 @@ namespace Booking_Hair_Admin.Controllers
             }
             return Ok("Time slot deleted successfully.");
         }
+        // Route: GET get-by-salon-id/api/timeslots/salon/{salonId}
+        [HttpGet("get-by-salon-id/{salonId}")]
+        public ActionResult<List<TimeSlotModel>> GetTimeSlotsBySalonId(int salonId)
+        {
+            var timeSlots = _timeSlotBusiness.GetTimeSlotsBySalonId(salonId);
+            if (timeSlots == null || timeSlots.Count == 0)
+            {
+                return NotFound($"No time slots found for Salon ID {salonId}.");
+            }
+            return Ok(timeSlots);
+        }
+        // Route: GET get-today/api/timeslots/today/{salonId}
+        [HttpGet("get-today/{salonId}")]
+        public ActionResult<List<TimeSlotModel>> GetTimeSlotsForToday(int salonId)
+        {
+            var timeSlots = _timeSlotBusiness.GetTimeSlotsForToday(salonId);
+            if (timeSlots == null || timeSlots.Count == 0)
+            {
+                return NotFound($"No time slots found for today at Salon ID {salonId}.");
+            }
+            return Ok(timeSlots);
+        }
+
+        // Route: GET get-tomorrow/api/timeslots/tomorrow/{salonId}
+        [HttpGet("get-tomorrow/{salonId}")]
+        public ActionResult<List<TimeSlotModel>> GetTimeSlotsForTomorrow(int salonId)
+        {
+            var timeSlots = _timeSlotBusiness.GetTimeSlotsForTomorrow(salonId);
+            if (timeSlots == null || timeSlots.Count == 0)
+            {
+                return NotFound($"No time slots found for tomorrow at Salon ID {salonId}.");
+            }
+            return Ok(timeSlots);
+        }
     }
 }

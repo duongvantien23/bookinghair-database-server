@@ -1347,6 +1347,30 @@
           }
         }
       },
+      "BusinessLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DataAcessLayer": "1.0.0",
+          "DataModel": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.33",
+          "Microsoft.AspNetCore.Http": "2.2.2",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
+          "Newtonsoft.Json": "13.0.3",
+          "Swashbuckle.AspNetCore": "6.0.7",
+          "Swashbuckle.AspNetCore.Swagger": "6.0.7",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.0.7",
+          "System.Data.SqlClient": "4.8.6",
+          "System.IdentityModel.Tokens.Jwt": "8.0.2"
+        },
+        "compile": {
+          "bin/placeholder/BusinessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessLayer.dll": {}
+        }
+      },
       "DataAcessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -3481,6 +3505,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "BusinessLayer/1.0.0": {
+      "type": "project",
+      "path": "../BusinessLayer/BusinessLayer.csproj",
+      "msbuildProject": "../BusinessLayer/BusinessLayer.csproj"
+    },
     "DataAcessLayer/1.0.0": {
       "type": "project",
       "path": "../DataAcessLayer/DataAcessLayer.csproj",
@@ -3494,8 +3523,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "DataAcessLayer >= 1.0.0",
-      "DataModel >= 1.0.0",
+      "BusinessLayer >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.33",
       "Microsoft.AspNetCore.Http >= 2.2.2",
       "Microsoft.AspNetCore.Http.Abstractions >= 2.2.0",
@@ -3516,11 +3544,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BookingHair_Client\\BookingHair_Client.csproj",
+      "projectUniqueName": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BookingHair_Client\\BookingHair_Client.csproj",
       "projectName": "BookingHair_Client",
-      "projectPath": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BookingHair_Client\\BookingHair_Client.csproj",
+      "projectPath": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BookingHair_Client\\BookingHair_Client.csproj",
       "packagesPath": "C:\\Users\\84399\\.nuget\\packages\\",
-      "outputPath": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BookingHair_Client\\obj\\",
+      "outputPath": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BookingHair_Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\84399\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3537,11 +3565,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\DataAcessLayer\\DataAcessLayer.csproj": {
-              "projectPath": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\DataAcessLayer\\DataAcessLayer.csproj"
-            },
-            "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\DataModel\\DataModel.csproj": {
-              "projectPath": "D:\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\DataModel\\DataModel.csproj"
+            "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\BusinessLayer.csproj": {
+              "projectPath": "D:\\Phát triển hướng dịch vụ\\BTL_PTHDV_ASP\\BAITAPLON_API\\BookingHair\\BusinessLayer\\BusinessLayer.csproj"
             }
           }
         }
