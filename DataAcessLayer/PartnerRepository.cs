@@ -27,7 +27,8 @@ namespace DataAcessLayer
                     "@Description", partner.Description,
                     "@Phone", partner.Phone,
                     "@Address", partner.Address,
-                    "@Website", partner.Website);
+                    "@Website", partner.Website,
+                    "@PartnerImage", partner.PartnerImage); 
 
                 if (!string.IsNullOrEmpty(msgError) || string.IsNullOrEmpty(result?.ToString()))
                 {
@@ -54,7 +55,8 @@ namespace DataAcessLayer
                     "@Description", partner.Description,
                     "@Phone", partner.Phone,
                     "@Address", partner.Address,
-                    "@Website", partner.Website);
+                    "@Website", partner.Website,
+                    "@PartnerImage", partner.PartnerImage); 
 
                 if (!string.IsNullOrEmpty(msgError) || string.IsNullOrEmpty(result?.ToString()))
                 {

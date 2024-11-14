@@ -44,6 +44,8 @@ builder.Services.AddTransient<IPartnerBusiness, PartnerBusiness>();
 builder.Services.AddTransient<IPartnerRepository, PartnerRepository>();
 builder.Services.AddTransient<IAppointmentStatusBusiness, AppointmentStatusBusiness>();
 builder.Services.AddTransient<IAppointmentStatusRepository, AppointmentStatusRepository>();
+builder.Services.AddTransient<IEmailBusiness, EmailBusiness>();
+builder.Services.AddTransient<IEmailRepository, EmailRepository>();
 
 builder.Services.AddCors(option =>
 {

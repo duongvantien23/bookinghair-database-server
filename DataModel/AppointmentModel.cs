@@ -42,6 +42,5 @@ namespace DataModel
                 UpdatedAt = DateTime.Now;
             }
         }
-
     }
 }

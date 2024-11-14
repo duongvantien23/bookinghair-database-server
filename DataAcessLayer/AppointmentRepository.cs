@@ -186,8 +186,10 @@ namespace DataAcessLayer
             string msgError = "";
             try
             {
+                // Chuyển danh sách khách hàng thành chuỗi JSON
                 string listJsonCustomer = Newtonsoft.Json.JsonConvert.SerializeObject(appointmentUser.ListJsonCustomer);
 
+                // Gọi stored procedure để tạo lịch hẹn
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_create_appointment_for_user",
                     "@CustomerId", appointmentUser.CustomerId,
                     "@SalonId", appointmentUser.SalonId,
@@ -199,23 +201,27 @@ namespace DataAcessLayer
                     "@StatusId", appointmentUser.StatusId,
                     "@ListJsonCustomer", listJsonCustomer);
 
+                // Kiểm tra lỗi từ stored procedure
                 if (!string.IsNullOrEmpty(msgError))
                 {
                     Console.WriteLine("Stored Procedure Error: " + msgError);
-                    throw new Exception(msgError);
+                    throw new Exception("Error from stored procedure: " + msgError);
                 }
 
+                // Kiểm tra kết quả trả về từ stored procedure
                 if (result == null || string.IsNullOrEmpty(result.ToString()))
                 {
                     Console.WriteLine("Stored Procedure returned no result.");
-                    throw new Exception("Stored Procedure returned no result.");
+                    throw new Exception("No result returned from stored procedure.");
                 }
 
-                Console.WriteLine("Result: " + result.ToString());
+                // Thành công, in kết quả ra log và trả về true
+                Console.WriteLine("Appointment created successfully. Result ID: " + result.ToString());
                 return true;
             }
             catch (Exception ex)
             {
+                // Log lỗi đầy đủ để dễ theo dõi khi có lỗi xảy ra
                 Console.WriteLine("Error creating appointment for user: " + ex.Message);
                 throw new Exception("Error creating appointment for user: " + ex.Message);
             }
